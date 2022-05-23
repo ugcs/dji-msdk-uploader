@@ -1,0 +1,81 @@
+{
+  "actions": null,
+  "autopilotModel": {
+    "distanceLimit": 40.0,
+    "distanceLimitOrigin": {
+      "latitude": 46.77541260000001,
+      "longitude": 8.3452827
+    },
+    "failsafe": {
+      "criticalBatPowerPercent": 13,
+      "lowBatPowerPercent": 23,
+      "maxAltitude": 500.0,
+      "returnAltitude": 50.0,
+      "smartRth": false
+    },
+    "goHomeAlt": 0.0,
+    "homeLocation": {
+      "latitude": 46.77541260000001,
+      "longitude": 8.3452827
+    },
+    "isDistanceLimitEnabled": false
+  },
+  "mission": {
+    "autoFlightSpeed": 5.0,
+    "finishedAction": "AUTO_LAND",
+    "flightPathMode": "NORMAL",
+    "gotoFirstWaypointMode": "SAFELY",
+    "headingMode": "AUTO",
+    "isExitMissionOnRCSignalLostEnabled": true,
+    "isGimbalElevationOptimizeEnabled": false,
+    "isGimbalPitchRotationEnabled": false,
+    "maxFlightSpeed": 15.0,
+    "missionID": 56175,
+    "pointOfInterest": null,
+    "repeatTimes": 1,
+    "waypointCount": 2,
+    "waypointList": [
+      {
+        "actionRepeatTimes": 1,
+        "actionTimeoutInSeconds": 999,
+        "altitude": 9.357623,
+        "coordinate": {
+          "latitude": 46.77540795608361,
+          "longitude": 8.345230998853996
+        },
+        "cornerRadiusInMeters": 0.2,
+        "gimbalPitch": 0.0,
+        "heading": 60,
+        "isUseCustomDirection": false,
+        "shootPhotoDistanceInterval": 0.0,
+        "shootPhotoTimeInterval": 0.0,
+        "speed": 5.0,
+        "turnMode": "CLOCKWISE",
+        "waypointActions": [
+          {
+            "actionParam": 60,
+            "actionType": "ROTATE_AIRCRAFT"
+          }
+        ]
+      },
+      {
+        "actionRepeatTimes": 1,
+        "actionTimeoutInSeconds": 999,
+        "altitude": 9.520343,
+        "coordinate": {
+          "latitude": 46.77548533867027,
+          "longitude": 8.345429320128687
+        },
+        "cornerRadiusInMeters": 0.2,
+        "gimbalPitch": 0.0,
+        "heading": 60,
+        "isUseCustomDirection": false,
+        "shootPhotoDistanceInterval": 0.0,
+        "shootPhotoTimeInterval": 0.0,
+        "speed": 5.0,
+        "turnMode": "CLOCKWISE",
+        "waypointActions": []
+      }
+    ]
+  }
+}
