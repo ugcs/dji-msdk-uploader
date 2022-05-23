@@ -3,7 +3,7 @@
 Application for diagnostic DJI MSDK issues related to route uploading.
 
 
-## Why this repository is exists?
+## Why does this repository exists?
 
 From time to time, UgCS users encounter with the route uploading issues. This repository contains a simple applicatsion that deserialize [WaypointV2Mission]([url](https://developer.dji.com/api-reference/android-api/Components/Missions/DJIWaypointV2Mission.html?search=waypointv2mission&i=0&) from .json file, and uploads the mission to the drone. The goal of this application is to explain the issue to the DJI Support team as fast as possible so thay can help us find a solution. 
 
