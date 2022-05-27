@@ -1,17 +1,23 @@
 package com.ugcs.android.vsm.diagnostics.uploader
 
-import android.content.*
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import com.ugcs.android.vsm.diagnostics.uploader.nativeroute.DjiMissionContainer
 import kotlinx.android.synthetic.main.activity_main.*
-import java.io.BufferedReader
-import java.io.IOException
-import java.io.InputStreamReader
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.util.*
+import kotlin.time.ExperimentalTime
+
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -21,11 +27,12 @@ class MainActivity : AppCompatActivity() {
 
         init {
             DroneBridge.DroneActions.values().forEach { EVENT_FILTER.addAction(it.name) }
-            
+
         }
     }
-    private lateinit var droneBridge : DroneBridge
-    lateinit var broadcastManager: LocalBroadcastManager
+
+    private lateinit var droneBridge: DroneBridge
+    private lateinit var broadcastManager: LocalBroadcastManager
     private var log = LinkedList<String>()
     private val eventReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -42,17 +49,26 @@ class MainActivity : AppCompatActivity() {
                 }
                 DroneBridge.DroneActions.STATE_UPDATE -> {
                     val text = intent.getStringExtra("text") ?: return
-                    if (log.size > 15) {
-                        log.removeAt(0);
-                    }
-                    log.add(text)
-                    tv_log?.text = (log.joinToString("\n"))
+                    log(text)
                 }
-                
+
             }
         }
     }
 
+    private fun log(e: Throwable) {
+        log("Error: $e")
+    }
+
+    private fun log(msg: String) {
+        if (log.size > 15) {
+            log.removeAt(0)
+        }
+        log.add(msg)
+        tv_log?.text = (log.joinToString("\n"))
+    }
+
+    @ExperimentalTime
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -60,24 +76,33 @@ class MainActivity : AppCompatActivity() {
         broadcastManager = LocalBroadcastManager.getInstance(this)
         broadcastManager.registerReceiver(eventReceiver, EVENT_FILTER)
         checkAndRequestAndroidPermissions()
-        btn_upload.setOnClickListener(this::uploadNativeMission)
+        btn_upload.setOnClickListener(this::btn_upload_onClick)
     }
-    private fun uploadNativeMission(view: View) {
+
+    @ExperimentalTime
+    private fun btn_upload_onClick(view: View) {
         try {
-            
-            val reader = BufferedReader(
-                    InputStreamReader(assets.open(NATIVE_ROUTE_TO_UPLOAD_PATH), "UTF-8"))
-            val nativeRoute = reader.readText()
-            droneBridge.uploadMission(nativeRoute)
-            try {
-                reader.close();
-            } catch (e : IOException ) {
-                Log.w("MainActivity","Native route file open fail to close reader: ${e.localizedMessage}")
+            val json: String = assets.open(NATIVE_ROUTE_TO_UPLOAD_PATH)
+                    .bufferedReader(charset("UTF-8"))
+                    .use { it.readText() }
+
+            val data = DjiMissionContainer.deserialize(json)
+
+            GlobalScope.launch(Dispatchers.Main) {
+                try {
+                    data.uploadToVehicle { progress ->
+                        log("${progress.stageName}: ${progress.stageProgress}")
+                    }
+                } catch (e: Throwable) {
+                    log(e)
+                }
             }
-        } catch (e : IOException) {
-            Log.w("MainActivity","Native route file open fail: ${e.localizedMessage}")
+        } catch (e: Throwable) {
+            log(e)
         }
     }
+
+
     private fun checkAndRequestAndroidPermissions() {
         val missing = PermissionUtils.checkForMissingPermission(applicationContext)
         if (missing.isNotEmpty()) {
@@ -88,15 +113,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    protected fun onAndroidPermissionsValid() {
+    private fun onAndroidPermissionsValid() {
         droneBridge.sdkInit()
     }
 
     override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
-                                           ) {
+            requestCode: Int,
+            permissions: Array<String>,
+            grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         // Check for granted permission and remove from missing list
         if (requestCode == REQUEST_PERMISSION_CODE) {

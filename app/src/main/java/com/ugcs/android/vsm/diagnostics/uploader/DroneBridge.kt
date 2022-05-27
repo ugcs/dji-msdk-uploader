@@ -33,6 +33,7 @@ import dji.sdk.sdkmanager.DJISDKManager.SDKManagerCallback
 import kotlinx.coroutines.*
 import org.jetbrains.annotations.NotNull
 import org.jetbrains.annotations.Nullable
+import java.lang.IllegalStateException
 import java.util.*
 import java.util.concurrent.atomic.AtomicReference
 
@@ -333,38 +334,6 @@ class DroneBridge(private val context: Context) {
         override fun onExecutionFinish(i: Int, @Nullable djiWaypointV2Error: DJIWaypointV2Error?) {}
     }
     
-    private fun uploadMissionV2(m: WaypointV2Mission, actions : List<WaypointV2Action>? = null) {
-        val state = AtomicReference(
-            Objects.requireNonNull(MissionControl.getInstance().waypointMissionV2Operator)?.currentState
-                                   )
-        Log.i("DroneBridge", "Mission Upload - WaypointMissionOperator - loadMission... (state = ${state.get()?.name})")
-        val waypointV2MissionOperator = MissionControl.getInstance().waypointMissionV2Operator
-        waypointV2MissionOperator!!.loadMission(m) { djiWaypointV2Error: DJIWaypointV2Error? ->
-            state.set(waypointV2MissionOperator.currentState)
-            if (djiWaypointV2Error != null) {
-                sendNotif("Error. ${djiWaypointV2Error.errorCode}")
-                Log.e("DroneBridge","Mission Upload - WaypointMissionOperator - loadMission FAILED (state = ${state.get()?.name}) as ${djiWaypointV2Error.description}")
-            }
-            else {
-                Log.i("DroneBridge","Mission Upload - WaypointMissionOperator - uploadMission... (state = ${state.get()?.name})")
-                waypointV2MissionOperator.uploadMission { djiError: DJIWaypointV2Error? ->
-                    if (djiError == null) {
-                        sendNotif( "Mission upload success")
-                        if (actions != null && actions.isNotEmpty()) {
-                            missionActionsAwaitingUpload = actions
-                            uploadActionsV2(waypointV2MissionOperator.currentActionState)
-                        }
-                        Log.i("DroneBridge","Mission Upload - OK - error is null")
-                    }
-                    else {
-                        Log.e("DroneBridge","Mission Upload - FAILED - djiError: ${djiError.description}")
-                        sendNotif("Error. ${djiError.errorCode}")
-                    }
-                }
-            }
-        }
-    }
-    
     private fun uploadMissionV1(mission: WaypointMission) {
         var state = MissionControl.getInstance().waypointMissionOperator.currentState
         MissionControl.getInstance().waypointMissionOperator.clearMission()
@@ -400,18 +369,6 @@ class DroneBridge(private val context: Context) {
                 }
             }
         }
-    }
-    
-    fun uploadMission(nativeRoute : String) {
-        if (isWp2()) {
-            val data = V_JsonUtil.gson.fromJson<RouteModelV2>(nativeRoute, object : TypeToken<RouteModelV2?>() {}.type)
-            data.mission?.let { uploadMissionV2(it, data.actions) }
-        }
-        else {
-            val data = V_JsonUtil.gson.fromJson<RouteModelV1>(nativeRoute, object : TypeToken<RouteModelV1?>() {}.type)
-            data.mission?.let { uploadMissionV1(it) }
-        }
-        
     }
     private fun uploadActionsV2(currentState: ActionState) {
         if (currentState == ActionState.READY_TO_UPLOAD

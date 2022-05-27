@@ -1,80 +1,1513 @@
 {
-  "actions": null,
+  "actions": [
+    {
+      "actionID": 0,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": false
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": {
+          "autoTerminateCount": 0,
+          "startIndex": 0
+        },
+        "trajectoryParam": null,
+        "triggerType": "REACH_POINT"
+      }
+    },
+    {
+      "actionID": 1,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": {
+          "interval": 1.0,
+          "startIndex": 0,
+          "type": "TIME"
+        },
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "SIMPLE_INTERVAL"
+      }
+    },
+    {
+      "actionID": 2,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 0,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 3,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "GIMBAL",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": {
+          "operationType": "ROTATE_GIMBAL",
+          "pathShootingParam": null,
+          "rotation": {
+            "ignore": false,
+            "mode": "ABSOLUTE_ANGLE",
+            "pitch": -70.0,
+            "roll": 3.4028235E38,
+            "time": 3.0,
+            "yaw": 3.4028235E38
+          }
+        },
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 2,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 4,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": true
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 3,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 5,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": false
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": {
+          "autoTerminateCount": 0,
+          "startIndex": 1
+        },
+        "trajectoryParam": null,
+        "triggerType": "REACH_POINT"
+      }
+    },
+    {
+      "actionID": 6,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": {
+          "interval": 1.0,
+          "startIndex": 1,
+          "type": "TIME"
+        },
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "SIMPLE_INTERVAL"
+      }
+    },
+    {
+      "actionID": 7,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 5,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 8,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": true
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 7,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 9,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": false
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": {
+          "autoTerminateCount": 0,
+          "startIndex": 2
+        },
+        "trajectoryParam": null,
+        "triggerType": "REACH_POINT"
+      }
+    },
+    {
+      "actionID": 10,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": {
+          "interval": 1.0,
+          "startIndex": 2,
+          "type": "TIME"
+        },
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "SIMPLE_INTERVAL"
+      }
+    },
+    {
+      "actionID": 11,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 9,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 12,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": true
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 11,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 13,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": false
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": {
+          "autoTerminateCount": 0,
+          "startIndex": 3
+        },
+        "trajectoryParam": null,
+        "triggerType": "REACH_POINT"
+      }
+    },
+    {
+      "actionID": 14,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": {
+          "interval": 1.0,
+          "startIndex": 3,
+          "type": "TIME"
+        },
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "SIMPLE_INTERVAL"
+      }
+    },
+    {
+      "actionID": 15,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 13,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 16,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": true
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 15,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 17,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": false
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": {
+          "autoTerminateCount": 0,
+          "startIndex": 4
+        },
+        "trajectoryParam": null,
+        "triggerType": "REACH_POINT"
+      }
+    },
+    {
+      "actionID": 18,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": {
+          "interval": 1.0,
+          "startIndex": 4,
+          "type": "TIME"
+        },
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "SIMPLE_INTERVAL"
+      }
+    },
+    {
+      "actionID": 19,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 17,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 20,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": true
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 19,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 21,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": false
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": {
+          "autoTerminateCount": 0,
+          "startIndex": 5
+        },
+        "trajectoryParam": null,
+        "triggerType": "REACH_POINT"
+      }
+    },
+    {
+      "actionID": 22,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": {
+          "interval": 1.0,
+          "startIndex": 5,
+          "type": "TIME"
+        },
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "SIMPLE_INTERVAL"
+      }
+    },
+    {
+      "actionID": 23,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 21,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 24,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": true
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 23,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 25,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": false
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": {
+          "autoTerminateCount": 0,
+          "startIndex": 6
+        },
+        "trajectoryParam": null,
+        "triggerType": "REACH_POINT"
+      }
+    },
+    {
+      "actionID": 26,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": {
+          "interval": 1.0,
+          "startIndex": 6,
+          "type": "TIME"
+        },
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "SIMPLE_INTERVAL"
+      }
+    },
+    {
+      "actionID": 27,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 25,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 28,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": true
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 27,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 29,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": false
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": {
+          "autoTerminateCount": 0,
+          "startIndex": 7
+        },
+        "trajectoryParam": null,
+        "triggerType": "REACH_POINT"
+      }
+    },
+    {
+      "actionID": 30,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": {
+          "interval": 1.0,
+          "startIndex": 7,
+          "type": "TIME"
+        },
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "SIMPLE_INTERVAL"
+      }
+    },
+    {
+      "actionID": 31,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 29,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 32,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": true
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 31,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 33,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": false
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": {
+          "autoTerminateCount": 0,
+          "startIndex": 8
+        },
+        "trajectoryParam": null,
+        "triggerType": "REACH_POINT"
+      }
+    },
+    {
+      "actionID": 34,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": {
+          "interval": 1.0,
+          "startIndex": 8,
+          "type": "TIME"
+        },
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "SIMPLE_INTERVAL"
+      }
+    },
+    {
+      "actionID": 35,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "CAMERA",
+        "aircraftControlActuatorParam": null,
+        "cameraActuatorParam": {
+          "cameraOperationType": "SHOOT_SINGLE_PHOTO",
+          "customNameParam": null,
+          "focusModeParam": null,
+          "focusParam": null,
+          "retryTimes": 0,
+          "startIntervalShotParam": null,
+          "stopIntervalShotParam": null,
+          "zoomParam": null
+        },
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 33,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 36,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": true
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 35,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    },
+    {
+      "actionID": 37,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": false
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": null,
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": {
+          "autoTerminateCount": 0,
+          "startIndex": 9
+        },
+        "trajectoryParam": null,
+        "triggerType": "REACH_POINT"
+      }
+    },
+    {
+      "actionID": 38,
+      "actuator": {
+        "actuatorIndex": 0,
+        "actuatorType": "AIRCRAFT_CONTROL",
+        "aircraftControlActuatorParam": {
+          "aircraftControlType": "START_STOP_FLY",
+          "flyControlParam": {
+            "isStartFly": true
+          },
+          "rotateYawParam": null
+        },
+        "cameraActuatorParam": null,
+        "djiLidarActuatorParam": null,
+        "gimbalActuatorParam": null,
+        "navigationActionParam": null,
+        "payloadActuatorParam": null,
+        "subActuatorIndex": 0
+      },
+      "trigger": {
+        "associateParam": {
+          "associateActionID": 37,
+          "associateType": "AFTER_FINISHED",
+          "waitingTime": 0.0
+        },
+        "complexReachPointTriggerParam": null,
+        "intervalTriggerParam": null,
+        "reachPointParam": null,
+        "trajectoryParam": null,
+        "triggerType": "ASSOCIATE"
+      }
+    }
+  ],
   "autopilotModel": {
-    "distanceLimit": 40.0,
+    "distanceLimit": 3048.0,
     "distanceLimitOrigin": {
-      "latitude": 46.77541260000001,
-      "longitude": 8.3452827
+      "latitude": 38.839914844354425,
+      "longitude": -94.54034606051009
     },
     "failsafe": {
-      "criticalBatPowerPercent": 13,
-      "lowBatPowerPercent": 23,
+      "criticalBatPowerPercent": 10,
+      "lowBatPowerPercent": 30,
       "maxAltitude": 500.0,
       "returnAltitude": 50.0,
-      "smartRth": false
+      "smartRth": true
     },
     "goHomeAlt": 0.0,
     "homeLocation": {
-      "latitude": 46.77541260000001,
-      "longitude": 8.3452827
+      "latitude": 38.839914844354425,
+      "longitude": -94.54034606051009
     },
     "isDistanceLimitEnabled": false
   },
   "mission": {
-    "autoFlightSpeed": 5.0,
-    "finishedAction": "AUTO_LAND",
-    "flightPathMode": "NORMAL",
+    "autoFlightSpeed": 12.192,
+    "exitMissionOnRCSignalLostEnabled": true,
+    "finishedAction": "NO_ACTION",
     "gotoFirstWaypointMode": "SAFELY",
-    "headingMode": "AUTO",
-    "isExitMissionOnRCSignalLostEnabled": true,
-    "isGimbalElevationOptimizeEnabled": false,
-    "isGimbalPitchRotationEnabled": false,
     "maxFlightSpeed": 15.0,
-    "missionID": 56175,
+    "missionID": 58167,
     "pointOfInterest": null,
-    "repeatTimes": 1,
-    "waypointCount": 2,
+    "repeatTimes": 0,
+    "waypointCount": 10,
     "waypointList": [
       {
-        "actionRepeatTimes": 1,
-        "actionTimeoutInSeconds": 999,
-        "altitude": 9.357623,
+        "altitude": 118.56350708007812,
+        "autoFlightSpeed": 12.192,
         "coordinate": {
-          "latitude": 46.77540795608361,
-          "longitude": 8.345230998853996
+          "latitude": 38.840085095258665,
+          "longitude": -94.53897826003922
         },
-        "cornerRadiusInMeters": 0.2,
-        "gimbalPitch": 0.0,
-        "heading": 60,
-        "isUseCustomDirection": false,
-        "shootPhotoDistanceInterval": 0.0,
-        "shootPhotoTimeInterval": 0.0,
-        "speed": 5.0,
-        "turnMode": "CLOCKWISE",
-        "waypointActions": [
-          {
-            "actionParam": 60,
-            "actionType": "ROTATE_AIRCRAFT"
-          }
-        ]
+        "dampingDistance": 0.2,
+        "flightPathMode": "GOTO_FIRST_POINT_ALONG_STRAIGHT_LINE",
+        "heading": 0.0,
+        "headingMode": "AUTO",
+        "maxFlightSpeed": 0.0,
+        "pointOfInterest": null,
+        "pointOfInterestAltitude": 0.0,
+        "turnMode": null,
+        "usingWaypointAutoFlightSpeed": true,
+        "usingWaypointMaxFlightSpeed": false
       },
       {
-        "actionRepeatTimes": 1,
-        "actionTimeoutInSeconds": 999,
-        "altitude": 9.520343,
+        "altitude": 118.56350708007812,
+        "autoFlightSpeed": 12.192,
         "coordinate": {
-          "latitude": 46.77548533867027,
-          "longitude": 8.345429320128687
+          "latitude": 38.83961360391802,
+          "longitude": -94.53897826003922
         },
-        "cornerRadiusInMeters": 0.2,
-        "gimbalPitch": 0.0,
-        "heading": 60,
-        "isUseCustomDirection": false,
-        "shootPhotoDistanceInterval": 0.0,
-        "shootPhotoTimeInterval": 0.0,
-        "speed": 5.0,
-        "turnMode": "CLOCKWISE",
-        "waypointActions": []
+        "dampingDistance": 0.0,
+        "flightPathMode": "GOTO_POINT_STRAIGHT_LINE_AND_STOP",
+        "heading": 0.0,
+        "headingMode": "AUTO",
+        "maxFlightSpeed": 0.0,
+        "pointOfInterest": null,
+        "pointOfInterestAltitude": 0.0,
+        "turnMode": null,
+        "usingWaypointAutoFlightSpeed": true,
+        "usingWaypointMaxFlightSpeed": false
+      },
+      {
+        "altitude": 118.56350708007812,
+        "autoFlightSpeed": 12.192,
+        "coordinate": {
+          "latitude": 38.839634349810716,
+          "longitude": -94.53939324375787
+        },
+        "dampingDistance": 0.0,
+        "flightPathMode": "GOTO_POINT_STRAIGHT_LINE_AND_STOP",
+        "heading": 0.0,
+        "headingMode": "AUTO",
+        "maxFlightSpeed": 0.0,
+        "pointOfInterest": null,
+        "pointOfInterestAltitude": 0.0,
+        "turnMode": null,
+        "usingWaypointAutoFlightSpeed": true,
+        "usingWaypointMaxFlightSpeed": false
+      },
+      {
+        "altitude": 118.56350708007812,
+        "autoFlightSpeed": 12.192,
+        "coordinate": {
+          "latitude": 38.84012289715066,
+          "longitude": -94.53939324375787
+        },
+        "dampingDistance": 0.0,
+        "flightPathMode": "GOTO_POINT_STRAIGHT_LINE_AND_STOP",
+        "heading": 0.0,
+        "headingMode": "AUTO",
+        "maxFlightSpeed": 0.0,
+        "pointOfInterest": null,
+        "pointOfInterestAltitude": 0.0,
+        "turnMode": null,
+        "usingWaypointAutoFlightSpeed": true,
+        "usingWaypointMaxFlightSpeed": false
+      },
+      {
+        "altitude": 118.56350708007812,
+        "autoFlightSpeed": 12.192,
+        "coordinate": {
+          "latitude": 38.840157878118184,
+          "longitude": -94.53980822747654
+        },
+        "dampingDistance": 0.0,
+        "flightPathMode": "GOTO_POINT_STRAIGHT_LINE_AND_STOP",
+        "heading": 0.0,
+        "headingMode": "AUTO",
+        "maxFlightSpeed": 0.0,
+        "pointOfInterest": null,
+        "pointOfInterestAltitude": 0.0,
+        "turnMode": null,
+        "usingWaypointAutoFlightSpeed": true,
+        "usingWaypointMaxFlightSpeed": false
+      },
+      {
+        "altitude": 118.56350708007812,
+        "autoFlightSpeed": 12.192,
+        "coordinate": {
+          "latitude": 38.83964477534691,
+          "longitude": -94.53980822747654
+        },
+        "dampingDistance": 0.0,
+        "flightPathMode": "GOTO_POINT_STRAIGHT_LINE_AND_STOP",
+        "heading": 0.0,
+        "headingMode": "AUTO",
+        "maxFlightSpeed": 0.0,
+        "pointOfInterest": null,
+        "pointOfInterestAltitude": 0.0,
+        "turnMode": null,
+        "usingWaypointAutoFlightSpeed": true,
+        "usingWaypointMaxFlightSpeed": false
+      },
+      {
+        "altitude": 118.56350708007812,
+        "autoFlightSpeed": 12.192,
+        "coordinate": {
+          "latitude": 38.83973240949658,
+          "longitude": -94.53989224275175
+        },
+        "dampingDistance": 0.0,
+        "flightPathMode": "GOTO_POINT_STRAIGHT_LINE_AND_STOP",
+        "heading": 0.0,
+        "headingMode": "AUTO",
+        "maxFlightSpeed": 0.0,
+        "pointOfInterest": null,
+        "pointOfInterestAltitude": 0.0,
+        "turnMode": null,
+        "usingWaypointAutoFlightSpeed": true,
+        "usingWaypointMaxFlightSpeed": false
+      },
+      {
+        "altitude": 118.56350708007812,
+        "autoFlightSpeed": 12.192,
+        "coordinate": {
+          "latitude": 38.83973240949658,
+          "longitude": -94.5389093679192
+        },
+        "dampingDistance": 0.0,
+        "flightPathMode": "GOTO_POINT_STRAIGHT_LINE_AND_STOP",
+        "heading": 0.0,
+        "headingMode": "AUTO",
+        "maxFlightSpeed": 0.0,
+        "pointOfInterest": null,
+        "pointOfInterestAltitude": 0.0,
+        "turnMode": null,
+        "usingWaypointAutoFlightSpeed": true,
+        "usingWaypointMaxFlightSpeed": false
+      },
+      {
+        "altitude": 118.56350708007812,
+        "autoFlightSpeed": 12.192,
+        "coordinate": {
+          "latitude": 38.84005564093048,
+          "longitude": -94.53889130448592
+        },
+        "dampingDistance": 0.0,
+        "flightPathMode": "GOTO_POINT_STRAIGHT_LINE_AND_STOP",
+        "heading": 0.0,
+        "headingMode": "AUTO",
+        "maxFlightSpeed": 0.0,
+        "pointOfInterest": null,
+        "pointOfInterestAltitude": 0.0,
+        "turnMode": null,
+        "usingWaypointAutoFlightSpeed": true,
+        "usingWaypointMaxFlightSpeed": false
+      },
+      {
+        "altitude": 118.56350708007812,
+        "autoFlightSpeed": 12.192,
+        "coordinate": {
+          "latitude": 38.84005564093048,
+          "longitude": -94.53987584144663
+        },
+        "dampingDistance": 0.2,
+        "flightPathMode": "STRAIGHT_OUT",
+        "heading": 0.0,
+        "headingMode": "AUTO",
+        "maxFlightSpeed": 0.0,
+        "pointOfInterest": null,
+        "pointOfInterestAltitude": 0.0,
+        "turnMode": null,
+        "usingWaypointAutoFlightSpeed": true,
+        "usingWaypointMaxFlightSpeed": false
       }
     ]
   }
