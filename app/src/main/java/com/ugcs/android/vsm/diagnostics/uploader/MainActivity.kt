@@ -107,6 +107,7 @@ class MainActivity : AppCompatActivity() {
                                 progress.stageName,
                                 progress.stageProgress * 100)
                     }
+                    log("Mission uploaded successfully.")
                 } catch (e: Throwable) {
                     log(e)
                 }
