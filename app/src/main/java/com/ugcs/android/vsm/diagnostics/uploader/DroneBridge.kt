@@ -272,8 +272,8 @@ class DroneBridge(private val context: Context) {
     fun isWp2() = aircraft?.model == Model.MATRICE_300_RTK
     
     companion object {
-        private const val BASE_LATITUDE = 22.0
-        private const val BASE_LONGITUDE = 113.0
+        private const val BASE_LATITUDE = 56.8627672
+        private const val BASE_LONGITUDE = 24.1133272
         private const val REFRESH_FREQ = 10
         private const val SATELLITE_COUNT = 10
     }
@@ -289,18 +289,13 @@ class DroneBridge(private val context: Context) {
         override fun onUploadUpdate(waypointMissionState: WaypointMissionUploadEvent) {
             val up = waypointMissionState.progress
             val currentState = waypointMissionState.currentState
-            val previousState = waypointMissionState.previousState
             if (currentState === WaypointMissionState.UPLOADING) {
                 if (up != null) {
                     val index = up.uploadedWaypointIndex + 1
                     val size = up.totalWaypointCount
                     val progress = index.toFloat() / size
                     Log.i("DroneBridge",String.format("MissionUploadProgress = %3.3f (%d/%d)", progress, index, size))
-                    sendNotif(String.format("WP upload %3.0f%%", progress))
                 }
-            }
-            else if (currentState === WaypointMissionState.READY_TO_EXECUTE) {
-                sendNotif( "WP upload 100%")
             }
         }
         

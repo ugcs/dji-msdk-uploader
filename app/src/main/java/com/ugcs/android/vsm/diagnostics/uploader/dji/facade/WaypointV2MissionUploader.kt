@@ -40,8 +40,6 @@ class WaypointV2MissionUploader {
                     args.progress?.let { djiProgress ->
                         if (djiProgress.totalWaypointCount > 0)
                             handler((djiProgress.lastUploadedWaypointIndex + 1) / djiProgress.totalWaypointCount.toDouble())
-                        else
-                            handler(1.0)
                     }
                 }
             }
@@ -114,8 +112,6 @@ class WaypointV2MissionUploader {
                     args.progress?.let { djiProgress ->
                         if (djiProgress.totalActionCount > 0)
                             handler((djiProgress.lastUploadedWaypointIndex + 1) / djiProgress.totalActionCount.toDouble())
-                        else
-                            handler(1.0)
                     }
                 }
             }
@@ -187,7 +183,6 @@ class WaypointV2MissionUploader {
 
             MissionUploadingStateListener(missionOperator).use { waypointsListener ->
                 if (onProgress != null) {
-                    onProgress(OperationProgress(UPLOADING_STAGE_WAYPOINTS, 0.0))
                     waypointsListener.whenProgress { progress ->
                         onProgress(
                                 OperationProgress(UPLOADING_STAGE_WAYPOINTS, progress))
@@ -199,12 +194,9 @@ class WaypointV2MissionUploader {
                 missionOperator.uploadMission()
                 waypointsListener.waitFor(READY_TO_EXECUTE)
 
-                onProgress?.invoke(OperationProgress(UPLOADING_STAGE_WAYPOINTS, 1.0))
-
                 if (actions != null && actions.isNotEmpty()) {
                     ActionsUploadingStateListener(missionOperator).use { actionsListener ->
                         if (onProgress != null) {
-                            onProgress(OperationProgress(UPLOADING_STAGE_ACTIONS, 0.0))
                             actionsListener.whenProgress { progress ->
                                 onProgress(
                                         OperationProgress(UPLOADING_STAGE_ACTIONS, progress))
@@ -213,7 +205,6 @@ class WaypointV2MissionUploader {
 
                         missionOperator.uploadWaypointActions(actions)
                         actionsListener.waitFor(ActionState.READY_TO_EXECUTE)
-                        onProgress?.invoke(OperationProgress(UPLOADING_STAGE_ACTIONS, 1.0))
                     }
                 }
             }

@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -21,7 +22,7 @@ import kotlin.time.ExperimentalTime
 
 class MainActivity : AppCompatActivity() {
     companion object {
-        private const val NATIVE_ROUTE_TO_UPLOAD_PATH = "2022_05_23_10_29_32.770.json"
+        private const val NATIVE_ROUTE_TO_UPLOAD_PATH = "m300-uploading-test.ugcsnr"
         private val EVENT_FILTER = IntentFilter()
         const val REQUEST_PERMISSION_CODE = 2358
 
@@ -60,12 +61,22 @@ class MainActivity : AppCompatActivity() {
         log("Error: $e")
     }
 
+    private fun log(msg: String, vararg args: Any?) {
+        log(
+                String.format(msg, *args)
+        )
+    }
+
     private fun log(msg: String) {
-        if (log.size > 15) {
-            log.removeAt(0)
+        synchronized(log) {
+            if (log.size > 500) {
+                log.removeAt(0)
+            }
+            log.addFirst(msg)
+            runOnUiThread {
+                tv_log?.text = (log.joinToString("\n"))
+            }
         }
-        log.add(msg)
-        tv_log?.text = (log.joinToString("\n"))
     }
 
     @ExperimentalTime
@@ -77,6 +88,7 @@ class MainActivity : AppCompatActivity() {
         broadcastManager.registerReceiver(eventReceiver, EVENT_FILTER)
         checkAndRequestAndroidPermissions()
         btn_upload.setOnClickListener(this::btn_upload_onClick)
+        tv_log.movementMethod = ScrollingMovementMethod()
     }
 
     @ExperimentalTime
@@ -88,10 +100,12 @@ class MainActivity : AppCompatActivity() {
 
             val data = DjiMissionContainer.deserialize(json)
 
-            GlobalScope.launch(Dispatchers.Main) {
+            GlobalScope.launch {
                 try {
                     data.uploadToVehicle { progress ->
-                        log("${progress.stageName}: ${progress.stageProgress}")
+                        log("%s: %.2f%%",
+                                progress.stageName,
+                                progress.stageProgress * 100)
                     }
                 } catch (e: Throwable) {
                     log(e)
